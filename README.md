@@ -25,7 +25,7 @@ A curated collection of enterprise-grade Homelab and DevOps projects built to mi
 
 ---
 
-## 🧑About
+## About
 I’m an IT Manager with 11+ years of hands-on experience designing and securing enterprise infrastructure.
 Building a hybrid Homelab that replicates production-grade DevOps workflows.
 
