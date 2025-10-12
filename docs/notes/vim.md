@@ -1,0 +1,18 @@
+## Vim Notes
+- Scroll in terminal - ctrl + B + left bracket with tmux to enter copy mode , ctrl + C to stop 
+- Scroll pages with CTRL +D and CTRL + U
+- k run -h | less will pipe the text into the less text reader where you use vim keybinds - :q to quit
+- / for search in vim
+- n for next search result
+- shift + N for previous search result
+- DD to delete a line
+- o - create new line below current line
+- A - insert at the end of the line
+- shift + V goes into visual mode so you can copy
+- y - yank or copy
+- p - paste 
+- u - undo
+- dgg - deletes everything above the cursor
+- pasting yaml into vim - in regular mode :set paste > insert mode > ctrl v = properly formatted yaml
+- r means replace
+- :%s/test/frontend/g - replaces the word test with frontend (find and replace)

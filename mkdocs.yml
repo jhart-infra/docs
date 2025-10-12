@@ -4,54 +4,63 @@ repo_name: jhart-infra/docs
 
 theme:
   name: material
-  font:
-    text: Merriweather Sans
-    code: JetBrains Mono
-  icon:
-    logo: fontawesome/solid/server
+  logo: assets/server.svg
+  favicon: assets/server.svg
   features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
     - navigation.footer
-    - navigation.instant
-    - navigation.instant.prefetch
     - navigation.indexes
-    - toc.follow
-    - toc.integrate
+   # - navigation.sections
+    #- navigation.expand
+    - navigation.top
     - navigation.path
+    - navigation.tabs          # << top-level sections become tabs
+    - navigation.tabs.sticky   # << keeps tabs visible on scroll (optional)
+    - search.highlight
     - search.suggest
-    - navigation.tabs
-    - navigation.tabs.sticky
-
-  palette: 
-    # Dark Mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Dark mode
+    - toc.follow
+    #- toc.integrate
+  palette:
+    - media: "(prefers-color-scheme)"
+      accent: lime
       primary: black
-      accent: indigo
-
-    # Light Mode
-    - scheme: default
       toggle:
-        icon: material/weather-night
-        name: Light mode
-      primary: blue
-      accent: deep orange
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      accent: lime
+      primary: black
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      accent: lime
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
 
 markdown_extensions:
-  - admonition # enables coloured blocks mid article
-  - attr_list # improves image handling
-  - md_in_html # grids (insiders)
-  - pymdownx.details # enables collapsible admonitions
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
   - footnotes
-  - toc:
-      permalink: true
-      toc_depth: 4
-  - abbr # enables glossary
-  - pymdownx.snippets: # enables glossary
+  # - toc:
+  #     permalink: true
+  #     toc_depth: 4
+  - abbr
+  - pymdownx.snippets:
       auto_append:
         - overrides/glossary.md
-  - pymdownx.keys # display keyboard commands nicely ++ctrl+alt+del++
+  - pymdownx.keys
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
@@ -67,5 +76,75 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
 
-extra_css:
-  - stylesheets/extra.css
+# extra_css:
+#   - stylesheets/extra.css
+
+nav:
+  - About: index.md
+
+  - Homelab:
+      - Overview: homelab/index.md
+      - Hardware: 
+        - Ryzen01: homelab/infrastructure/hardware/ryzen01.md
+        - Ryzen02: homelab/infrastructure/hardware/ryzen02.md
+        - Ryzen03: homelab/infrastructure/hardware/ryzen03.md
+      - Networking: 
+        - Firewalls: 
+          - Pfsense: homelab/infrastructure/networking.md
+          - Cisco: homelab/infrastructure/Cisco.md 
+          - Fortigate: homelab/infrastructure/fortigate.md
+        - Secure Home Access Through VPS and WireGuard: homelab/infrastructure/wireguard.md
+        - Cloudflare: homelab/infrastructure/cloudflare.md
+        - VLANS: homelab/infrastructure/vlans.md
+      - Storage:
+        - Ceph: homelab/infrastructure/storage-ceph.md
+        - NAS: homelab/infrastructure/storage-nas.md
+        - Samba: homelab/infrastructure/samba.md
+      - Virtualization: 
+        - Overview:   homelab/infrastructure/virtualization.md
+        - EVE-NG Lab: homelab/infrastructure/eve-ng.md
+      - Automation:
+            - Overview: homelab/automation/index.md
+            - Ansible: homelab/automation/ansible.md
+            - Terraform: homelab/automation/terraform.md
+      - Kubernetes:
+          - Overview: homelab/kubernetes/index.md
+          - Apps: 
+            - Argocd: homelab/kubernetes/apps/argocd.md
+          - Talos Linux: homelab/kubernetes/talos.md
+      - Monitoring:
+          - Overview: 
+            - Overview: homelab/monitoring/index.md
+      - Backups & Disaster Recovery:
+          # - Overview: 
+          - Overview: homelab/backups-dr/index.md
+          - Proxmox Backup Server: homelab/backups-dr/pbs.md
+      - Docker:
+          - Overview: homelab/docker/index.md
+          - Nextcloud: homelab/docker/nextcloud.md
+      - Identity & Security:
+          - Overview: 
+            - Overview: homelab/identity-security/index.md  
+
+  - Notes: 
+    - Overview: notes/index.md
+    - Vim: notes/vim.md
+    - Ubuntu: notes/ubuntu.md
+    - macOS: notes/macos.md
+    - Powershell: notes/powershell.md
+
+  - Roadmap:
+      - Overview: homelab/roadmap/index.md
+
+  - Work Projects:
+      - Overview: Work Projects/index.md
+      - VMware Cloud Migration: Work Projects/vmwarecloud.md
+      # Remove these if the files don't exist yet:
+      - Cisco ISE Migration: Work Projects/cisco-ise.md
+      - Firewall Management Center: Work Projects/fmc.md
+      - Microsoft Deployment Toolkit: Work Projects/mdt.md
+      - Automate: Work Projects/cwautomate.md
+
+plugins:
+  - glightbox
+  - search
