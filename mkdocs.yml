@@ -103,6 +103,7 @@ nav:
       - Virtualization: 
         - Overview:   homelab/infrastructure/virtualization.md
         - EVE-NG Lab: homelab/infrastructure/eve-ng.md
+        - Proxmox: homelab/infrastructure/Proxmox.md
       - Automation:
             - Overview: homelab/automation/index.md
             - Ansible: homelab/automation/ansible.md
