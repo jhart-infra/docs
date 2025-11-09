@@ -2,13 +2,6 @@
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
 ## Project layout
 
     mkdocs.yml    # The configuration file.
@@ -16,4 +9,5 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
-I like to drink :beers: after I played :soccer:
+## New Kubernetes Project
+[Kubernetes Project](/docs/docs/homelab/docker/nextcloud.md)
